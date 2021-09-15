@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="文字.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container {
+            width: 1100px;
+            height: 1450px;
+            margin: 0 auto;
+            background-repeat: repeat;
+            background-image: url(images/背景.jpg);
+        }
+
+        #header {
+            width: 1100px;
+            height: 250px;
+        }
+
+        #leftimg img {
+            float: left;
+            height: 200px;
+            width: 200px;
+        }
+
+        .search-box {
+            height: 200px;
+            line-height: 200px;
+            margin: 0 auto;
+            margin-right: 10px;
+            text-align: center;
+            display: block;
+            float: right;
+        }
+
+        .search-txt {
+            height: 35px;
+            width: 400px;
+            border-color: #b4dbec;
+            border-width: 2px;
+            border-radius: 35px;
+            outline: none;
+        }
+
+        #header input:hover {
+            background-color: rgba(180, 219, 236, 0.3);
+            border-color: #b4dbec;
+        }
+
+        .search-btn {
+            outline: none;
+            height: 35px;
+            width: 60px;
+            border-radius: 5px;
+            border-color: #b4dbec;
+            background-color: #b4dbec;
+        }
+
+        #nav {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: inline-block;
+            padding: 10px;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        li a:active {
+            background-color: rgba(256, 256, 256, 0.6);
+            border-radius: 5px;
+        }
+
+        #body {
+            width: 1100px;
+            height: 1000px;
+        }
+
+        #left {
+            width: 400px;
+            height: 900px;
+            background-color: white;
+            padding-top: 100px;
+            margin: 30px;
+            border-radius: 30px;
+            float: left;
+        }
+
+        #left input {
+            display: block;
+            margin: 0 auto;
+            width: 250px;
+            height: 50px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom-color: #b4dbec;
+            outline-color: #b4dbec;
+        }
+
+        #register {
+            border: none;
+            background-color: white;
+            outline: none;
+        }
+
+        #register:hover {
+            cursor: pointer;
+        }
+
+        #signIn:hover {
+            cursor: pointer;
+        }
+
+        #signIn {
+            border: none;
+            background-color: white;
+            outline: none;
+        }
+
+        #register1 {
+            height: 50px;
+            width: 120px;
+            border-radius: 50px;
+            background-color: #b4dbec;
+            border-color: rgb(217, 232, 243);
+            outline: none;
+            display: block;
+            margin: 50px auto;
+        }
+
+        #signIn1 {
+            height: 50px;
+            width: 120px;
+            margin-top: 30px;
+            border-radius: 50px;
+            background-color: #b4dbec;
+            border-color: rgb(217, 232, 243);
+            outline: none;
+            display: block;
+            margin: 50px auto;
+        }
+
+        #code {
+            width: 150px;
+            height: 50px;
+            background-color: rgba(180, 219, 236, 0.3);
+            margin: 0 auto;
+        }
+
+        #rancode {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 5px;
+            border-width: 1px;
+            outline: none;
+        }
+
+        #right {
+            width: 580px;
+            height: 900px;
+            float: left;
+            margin: 30px;
+        }
+
+        .imgText {
+            position: relative;
+            overflow: hidden;
+            width: 580px;
+            height: 100px;
+
+        }
+
+        .title {
+            position: absolute;
+            top: 200px;
+            width: 580px;
+            height: 100px;
+            border-radius: 10px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            transition: top 0.5s ease;
+            background-color: rgba(256, 256, 256, 0.6);
+        }
+
+        .imgText:hover .title {
+            top: 0;
+        }
+
+        #right img {
+            width: 580px;
+            height: 100px;
+            border-radius: 10px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        #basicInformation {
+            width: 580px;
+            height: 200px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            background-color: rgba(256, 256, 256, 0.6);
+        }
+
+        #basicText {
+            float: left;
+            height: 200px;
+            width: 250px;
+            line-height: 30px;
+            margin-left: 25px;
+            margin-top: 25px;
+        }
+
+        #basicImg {
+            float: right;
+        }
+
+        #basicImg img {
+            width: 180px;
+            height: 180px;
+            border-style: dotted;
+            border-radius: 10px;
+            margin: 8px;
+            border-color: #abacce;
+
+        }
+
+        #mySchool {
+            width: 580px;
+            height: 250px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            background-color: rgba(256, 256, 256, 0.6);
+        }
+
+        #schoolImg {
+            float: left;
+            width: 300px;
+            height: 200px;
+        }
+
+        #schoolImg img {
+            height: 240px;
+            width: 300px;
+        }
+
+        #mySchoolleft {
+            float: left;
+            height: 240px;
+            width: 300px;
+            margin-top: 5px;
+            margin-left: 5px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        #schoolImgtext {
+            float: left;
+            position: absolute;
+            top: 240px;
+            height: 120px;
+            line-height: 120px;
+            width: 300px;
+            transition: top 1s ease;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #mySchoolleft:hover #schoolImgtext {
+            top: 60px;
+        }
+
+        #schoolText {
+            height: 250px;
+            width: 260px;
+            float: right;
+            top: 200px;
+        }
+
+        #myHobby {
+            width: 580px;
+            height: 210px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            background-color: rgba(256, 256, 256, 0.6);
+        }
+
+        .picbox {
+            float: left;
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            margin-top: 28px;
+            border-radius: 5px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 1.5s;
+        }
+
+        .picbox:hover {
+            transform: rotateY(180deg);
+        }
+
+        .face {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
+
+        .back {
+            background-color: #d4e0f1;
+            border-radius: 5px;
+            transform: rotateY(180deg);
+        }
+
+        #myHobby img {
+            width: 150px;
+            height: 150px;
+            border-radius: 5px;
+        }
+
+        #footer a {
+            display: block;
+            height: 40px;
+        }
+
+        #footer {
+            width: 1100px;
+            height: 50px;
+            line-height: 50px;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="leftimg">
+                <img src="images/logo.jpg" alt="logo">
+            </div>
+            <div class="search-box">
+                <input class="search-txt" type='text' id='inp' style="vertical-align:middle;" value="在此输入搜索内容……"
+                    onfocus="if(this.value==defaultValue) {this.value='';this.type='text';this.style.color='black'}"
+                    onblur="if(!value) {value=defaultValue; this.type='text';this.style.color='#ccc'}" />
+                <button class="search-btn" id="btn">搜索</button>
+            </div>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="index.html">首 页 </a>|&nbsp;</li>
+                <li><a href="mySong.html">我 的 歌 单 </a>|&nbsp;</li>
+                <li><a href="myHometown.html"> 我 的 家 乡</a></li>
+            </ul>
+        </div>
+        <div id="body">
+            <div id="left">
+                <button class="leftbtn" id="register" onclick="show1()">注册</button>/
+                <button class="leftbtn" id="signIn" onclick="show2()">登录</button>
+                <input type="text" id="username1" value="用户名" name="username"
+                    onfocus="if(this.value==defaultValue) {this.value='';this.type='text'}"
+                    onblur="if(!value) {value=defaultValue; this.type='text';}" style="margin: 50px auto;">
+                <input type="text" id="password1" value="不少于六位的密码"
+                    onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}"
+                    onblur="if(!value) {value=defaultValue; this.type='text';}" style="margin: 50px auto;">
+                <input type="text" id="password2" value="再次输入密码"
+                    onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}"
+                    onblur="if(!value) {value=defaultValue; this.type='text';}" style="margin: 50px auto;">
+                <input type="text" id="yzm" value="验证码"
+                    onfocus="if(this.value==defaultValue) {this.value='';this.type='text'}"
+                    onblur="if(!value) {value=defaultValue; this.type='text';}">
+                <div id="codeBox">
+                    <div id="code" style="vertical-align:middle;margin-top: 30px;display:inline-block ;"></div>
+                    <div style="vertical-align:middle;display:inline-block ;margin-top: 30px;"><button
+                            onclick="createRandCode()" id=rancode>验证码</button></div>
+                </div>
+                <button class="leftbtn" id="register1" onclick=check1()>注册</button>
+                <button class="leftbtn" id="signIn1" style="display: none;" onclick=check2()>登录</button>
+            </div>
+            <div id="right">
+                <div class="imgText">
+                    <img src="images/标题背景1.jpg" alt="">
+                    <div class="title">
+                        <h3>
+                            1.基本信息
+                        </h3>
+                    </div>
+                </div>
+                <div id="basicInformation">
+                    <div id="basicText">
+                        <p><span>姓名</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张雯瑷</p>
+                        <p><span>生日</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2001.7.18</p>
+                        <p><span>专业</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信息管理与信息系统</p>
+                        <p><span>班级</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信息19-2班</p>
+                        <p><span>学号</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;191001229</p>
+                    </div>
+                    <div id="basicImg" onmouseover="mouseOver()" onmouseout="mouseOut()">
+                        <img src="images/插画1.jpg" alt="" id="picture">
+                    </div>
+                </div>
+                <div class="imgText">
+                    <img src="images/标题背景1.jpg" alt="">
+                    <div class="title">
+                        <h3>
+                            2.我的学校
+                        </h3>
+                    </div>
+                </div>
+                <div id="mySchool">
+                    <div id="mySchoolleft">
+                        <div id="schoolImg">
+                            <img src="images/北林.jpg" alt="">
+                        </div>
+                        <div id="schoolImgtext">
+                            <p>北京林业大学</p>
+                        </div>
+                    </div>
+                    <div id="schoolText">
+                        <p>北京林业大学（Beijing Forestry
+                            University）简称<span>“北林”</span>，教育部直属、教育部与国家林业局共建的全国重点大学，国家<span>“双一流”</span>世界一流学科建设高校、<span>“211工程”</span>高校。学校以生物学、生态学为基础，以林学、风景园林学、林业工程、农林经济管理为特色，农、理、工、管、经、文、法、哲、教、艺等多门类协调发展。
+                        </p>
+                    </div>
+                </div>
+                <div class="imgText">
+                    <img src="images/标题背景1.jpg" alt="">
+                    <div class="title">
+                        <h3>
+                            3.我的爱好
+                        </h3>
+                    </div>
+                </div>
+                <div id="myHobby">
+                    <div class="picbox">
+                        <div class="face front">
+                            <img src="images/羽毛球.jpg" alt="羽毛球">
+                        </div>
+                        <div class="face back">
+                            <h3>打羽毛球</h3>
+                        </div>
+                    </div>
+                    <div class="picbox">
+                        <div class="face front">
+                            <img src="images/画画.jpg" alt="画画">
+                        </div>
+                        <div class="face back">
+                            <h3>画画</h3>
+                        </div>
+                    </div>
+                    <div class="picbox">
+                        <div class="face front">
+                            <img src="images/听音乐.jpg" alt="听音乐">
+                        </div>
+                        <div class="face back">
+                            <h3>听音乐</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="#header" id="returnTop">返回顶部</a>
+            &copy;191001229 张雯瑷
+        </div>
+    </div>
+    <script>
+        var oInp = document.getElementById('inp');
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function () {
+            Search();
+        }
+        document.onkeydown = function () {
+            if (event.keyCode == 13) {
+                Search();
+            }
+        }
+
+        function Search() {
+            var url = 'https://www.baidu.com/s?wd=' + oInp.value;
+            window.open(url);
+        }
+
+        function show1() {
+            createRandCode();
+            var oregister1 = document.getElementById('register1');
+            var osignIn1 = document.getElementById('signIn1');
+            var reg = document.getElementById('register');
+            var sign = document.getElementById('signIn');
+            var ptw2 = document.getElementById('password2');
+            oregister1.style.display = 'block';
+            osignIn1.style.display = 'none';
+            reg.style.color = "#b4dbec";
+            sign.style.color = "black";
+            ptw2.style.display = 'block';
+        }
+
+        function show2() {
+            createRandCode();
+            var oregister1 = document.getElementById('register1');
+            var osignIn1 = document.getElementById('signIn1');
+            var reg = document.getElementById('register');
+            var sign = document.getElementById('signIn');
+            var ptw2 = document.getElementById('password2');
+            oregister1.style.display = 'none';
+            osignIn1.style.display = 'block';
+            ptw2.style.display = 'none';
+            reg.style.color = "black";
+            sign.style.color = "#b4dbec";
+        }
+        var number = "";
+
+        function createRandCode() {
+            var randcode = "";
+            number = "";
+            var a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K', 'L', 'M', 'N',
+                'O', 'P', 'Q', 'R', 'S', 'T',
+                'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+            ];
+            for (var i = 0; i < 4; i++) {
+                var randpos = Math.floor(Math.random() * (a.length));
+                randcode += a[randpos];
+            }
+            number = randcode;
+            document.getElementById("code").innerHTML = randcode;
+        }
+
+        function mouseOver() {
+            document.getElementById('picture').src = "images/插画2.jpg"
+        }
+
+        function mouseOut() {
+            document.getElementById('picture').src = "images/插画1.jpg"
+        }
+
+        function check1() {
+            var name = document.getElementById('username1');
+            var ptw1 = document.getElementById('password1');
+            var ptw2 = document.getElementById('password2');
+            var code = document.getElementById('yzm');
+            var isNUll = false;
+            if (name.value == '用户名') {
+                alert("请输入用户名！");
+                isNUll = true;
+            }
+            if (ptw1.value == '不少于六位的密码' || ptw1.value.length < 6) {
+                alert("请输入不少于六位的密码！");
+                isNUll = true;
+            }
+            if (ptw2.value != ptw1.value) {
+                if (ptw2.value == '再次输入密码')
+                    alert('再次输入密码为空!');
+                else
+                    alert("两次密码输入不一致！");
+                isNUll = true;
+            }
+            if (yzm.value != number) {
+                if (yzm.value == '验证码') {
+                    alert("请输入验证码！");
+                } else
+                    alert("验证码输入错误！");
+                isNUll = true;
+            }
+            if (isNUll == false) {
+                alert("注册成功!");
+                name.value = '用户名';
+                ptw1.value = '不少于六位的密码';
+                ptw1.type = 'text';
+                ptw2.value = '再次输入密码';
+                ptw2.type = 'text';
+                yzm.value = '验证码';
+                createRandCode();
+            }
+        }
+
+        function check2() {
+            var name = document.getElementById('username1');
+            var ptw1 = document.getElementById('password1');
+            var code = document.getElementById('yzm');
+            var isNUll = false;
+            if (name.value == '用户名') {
+                alert("请输入用户名！");
+                isNUll = true;
+            }
+            if (ptw1.value == '不少于六位的密码' || ptw1.value.length < 6) {
+                alert("请输入不少于六位的密码！");
+                isNUll = true;
+            }
+            if (yzm.value != number) {
+                if (yzm.value == '验证码') {
+                    alert("请输入验证码！");
+                } else
+                    alert("验证码输入错误！");
+                isNUll = true;
+            }
+            if (isNUll == false) {
+                alert("登录成功!");
+                name.value = '用户名';
+                ptw1.value = '不少于六位的密码';
+                ptw1.type = 'text';
+                yzm.value = '验证码';
+                createRandCode();
+            }
+
+        }
+    </script>
+</body>
+
+</html>

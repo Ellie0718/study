@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的歌单</title>
+    <link rel="stylesheet" href="文字.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container {
+            width: 1100px;
+            height: 1400px;
+            margin: 0 auto;
+            background-repeat: repeat;
+            background-image: url(images/背景.jpg);
+        }
+
+        #header {
+            width: 1100px;
+            height: 250px;
+        }
+
+        #leftimg img {
+            float: left;
+            height: 200px;
+            width: 200px;
+        }
+
+        .search-box {
+            height: 200px;
+            line-height: 200px;
+            margin: 0 auto;
+            text-align: center;
+            display: block;
+            float: right;
+            margin-right: 10px;
+        }
+
+        .search-txt {
+            height: 35px;
+            width: 400px;
+            border-color: #b4dbec;
+            border-width: 2px;
+            border-radius: 35px;
+            outline: none;
+        }
+
+        #header input:hover {
+            background-color: rgba(180, 219, 236, 0.3);
+            border-color: #b4dbec;
+        }
+
+        .search-btn {
+            outline: none;
+            height: 35px;
+            width: 60px;
+            border-radius: 5px;
+            border-color: #b4dbec;
+            background-color: #b4dbec;
+        }
+
+        #nav {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: inline-block;
+            padding: 10px;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        li a:active {
+            background-color: rgba(256, 256, 256, 0.6);
+            border-radius: 5px;
+        }
+
+        #body {
+            width: 1100px;
+            height: 1000px;
+        }
+
+        #bar {
+            width: 350px;
+            height: 900px;
+            background-color: white;
+            margin: 50px;
+            float: left;
+            border-radius: 10px;
+        }
+
+        .albumBox {
+            width: 350px;
+            height: 110px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .albumBox:hover {
+            background-color: rgb(247, 245, 236);
+        }
+
+        .albumBox img {
+            width: 90px;
+            height: 90px;
+            float: left;
+            margin: 7px 20px;
+            border-style: groove;
+            border-color: white;
+            border-width: 3px;
+            box-shadow: 2px 2px 3px gray;
+        }
+
+        #album a {
+            display: block;
+        }
+
+        #main {
+            width: 580px;
+            height: 900px;
+            float: left;
+            margin: 50px;
+            margin-left: 10px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .songBox {
+            width: 580px;
+            height: 260px;
+            margin: 5px 0;
+            border-bottom: 5px dotted #b4dbec;
+        }
+
+        .song {
+            width: 260px;
+            height: 250px;
+        }
+
+        #song1 {
+            float: right;
+        }
+
+        #song2 {
+            float: left;
+        }
+
+        #song3 {
+            float: right;
+        }
+
+        .song img {
+            width: 190px;
+            height: 190px;
+            margin-left: 25px;
+            margin-top: 5px;
+            border-radius: 200px;
+            border-style: solid;
+            border-color: rgb(247, 245, 236);
+            border-width: 5px;
+            box-shadow: 0px 0px 5px rgb(0, 0, 0);
+            filter: grayscale(5%);
+        }
+
+        .song img:hover {
+            filter: brightness(110%);
+            box-shadow: 0px 0px 8px rgb(0, 0, 0);
+        }
+
+        video {
+            width: 240px;
+            height: 40px;
+            outline: none;
+            margin: 5px;
+        }
+
+        .introduction {
+            width: 320px;
+            height: 260px;
+            /* background-color: gray; */
+        }
+
+        #introduction1 {
+            float: left;
+        }
+
+        #introduction2 {
+            float: right;
+        }
+
+        #introduction3 {
+            float: left;
+        }
+
+        .aboutSong:hover {
+            width: 285px;
+            background-color: rgb(247, 245, 236);
+        }
+
+        #footer {
+            width: 1100px;
+            height: 50px;
+            clear: both;
+        }
+
+        #footer a {
+            display: block;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="leftimg">
+                <img src="images/logo.jpg" alt="logo">
+            </div>
+            <div class="search-box">
+                <input class="search-txt" type='text' id='inp' style="vertical-align:middle;" value="在此输入搜索内容……"
+                    onfocus="if(this.value==defaultValue) {this.value='';this.type='text';this.style.color='black'}"
+                    onblur="if(!value) {value=defaultValue; this.type='text';this.style.color='#ccc'}" />
+                <button class="search-btn" id="btn">搜索</button>
+            </div>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="index.html">首 页 </a>|&nbsp;</li>
+                <li><a href="mySong.html">我 的 歌 单 </a>|&nbsp;</li>
+                <li><a href="myHometown.html"> 我 的 家 乡</a></li>
+            </ul>
+        </div>
+        <div id="body">
+            <div id="bar">
+                <h3>List</h3>
+                <div class="albumBox">
+                    <img src="images/6.jpg" alt="">
+                    <a href="https://music.163.com/#/my/m/music/playlist?id=1983010395" target="_blank">我喜欢的音乐</a>
+                </div>
+                <div class="albumBox">
+                    <img src="images/7.jpg" alt="">
+                    <a href="https://music.163.com/#/my/m/music/playlist?id=2351980113" target="_blank">日系</a>
+                </div>
+                <div class="albumBox">
+                    <img src="images/8.jpg" alt="">
+                    <a href="https://music.163.com/#/my/m/music/playlist?id=2335264391" target="_blank">韩系</a>
+                </div>
+                <div class="albumBox">
+                    <img src="images/9.jpg" alt="">
+                    <a href="https://music.163.com/#/my/m/music/playlist?id=1999717322" target="_blank">甜系</a>
+                </div>
+                <div class="albumBox">
+                    <img src="images/10.jpg" alt="">
+                    <a href="https://music.163.com/#/my/m/music/playlist?id=1999675914" target="_blank">古风系</a>
+                </div>
+                <div class="albumBox">
+                    <img src="images/11.jpg" alt="">
+                    <a href="https://music.163.com/#/my/m/music/playlist?id=1999675914" target="_blank">欧美系</a>
+                </div>
+                <div class="albumBox">
+                    <img src="images/12.jpg" alt="">
+                    <a href="https://music.163.com/#/my/m/music/playlist?id=1985938195" target="_blank">纯音乐</a>
+                </div>
+            </div>
+            <div id="main">
+                <h3>近期最爱Top3</h3>
+                <div class="songBox">
+                    <div class="song" id="song1">
+                        <img src="images/14.jpg" alt="">
+                        <video src="太冲动的我.mp3" controls></video>
+                    </div>
+                    <div class="introduction" id="introduction1">
+                        <h4 class="songTitle">
+                            &nbsp;No.1
+                        </h4>
+                        <p class="aboutSong"><span class="type">歌名</span>&nbsp;《太冲动的我》</p>
+                        <p class="aboutSong"><span class="type">歌手</span>&nbsp;&nbsp;Jandz</p>
+                        <p class="aboutSong"><span class="type">专辑</span>&nbsp;《太冲动的我》</p>
+                        <p class="aboutSong"><span class="type">来源</span>&nbsp;「我喜欢的音乐」</p>
+                        <p class="aboutSong"><span class="type">推荐指数</span>&nbsp;<span class="score">♥♥♥♥♥</span></p>
+                    </div>
+                </div>
+                <div class="songBox">
+                    <div class="song" id="song2">
+                        <img src="images/13.jpg" alt="">
+                        <video src="We Can't Stop.mp3" controls></video>
+                    </div>
+                    <div class="introduction" id="introduction2">
+                        <h4 class="songTitle">
+                            &nbsp;No.2
+                        </h4>
+                        <p class="aboutSong"><span class="type">歌名</span>《We Can't Stop》</p>
+                        <p class="aboutSong"><span class="type">歌手</span>&nbsp;Boyce Avenue</p>
+                        <p class="aboutSong"><span class="type">专辑</span>《Cover Sessions,Vol.3》</p>
+                        <p class="aboutSong"><span class="type">来源</span>「欧美系」</p>
+                        <p class="aboutSong"><span class="type">推荐指数</span>&nbsp;<span class="score">♥♥♥♥♥</span></p>
+                    </div>
+                </div>
+                <div class="songBox" style="border-bottom: 0px;">
+                    <div class="song" id="song3">
+                        <img src="images/15.jpg" alt="">
+                        <video src="万有引力.mp3" controls></video>
+                    </div>
+                    <div class="introduction" id="introduction3">
+                        <h4 class="songTitle">
+                            &nbsp;No.3
+                        </h4>
+                        <p class="aboutSong"><span class="type">歌名</span>&nbsp;《万有引力》</p>
+                        <p class="aboutSong"><span class="type">歌手</span>&nbsp;&nbsp;汪苏泷</p>
+                        <p class="aboutSong"><span class="type">专辑</span>&nbsp;《万有引力》</p>
+                        <p class="aboutSong"><span class="type">来源</span>&nbsp;「甜系」</p>
+                        <p class="aboutSong"><span class="type">推荐指数</span>&nbsp;<span class="score">♥♥♥♥♡</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="#header" id="returnTop">返回顶部</a>
+            &copy;191001229 张雯瑷
+        </div>
+
+    </div>
+</body>
+
+</html>

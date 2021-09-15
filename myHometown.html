@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的家乡</title>
+    <link rel="stylesheet" href="文字.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container {
+            width: 1100px;
+            height: 1500px;
+            margin: 0 auto;
+            background-repeat: repeat;
+            background-image: url(images/背景.jpg);
+        }
+
+        #header {
+            width: 1100px;
+            height: 250px;
+        }
+
+        #leftimg img {
+            float: left;
+            height: 200px;
+            width: 200px;
+        }
+
+        .search-box {
+            height: 200px;
+            line-height: 200px;
+            margin: 0 auto;
+            text-align: center;
+            display: block;
+            float: right;
+            margin-right: 10px;
+        }
+
+        .search-txt {
+            height: 35px;
+            width: 400px;
+            border-color: #b4dbec;
+            border-width: 2px;
+            border-radius: 35px;
+            outline: none;
+        }
+
+        #header input:hover {
+            background-color: rgba(180, 219, 236, 0.3);
+            border-color: #b4dbec;
+        }
+
+        .search-btn {
+            outline: none;
+            height: 35px;
+            width: 60px;
+            border-radius: 5px;
+            border-color: #b4dbec;
+            background-color: #b4dbec;
+        }
+
+        #nav {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: inline-block;
+            padding: 10px;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        li a:active {
+            background-color: rgba(256, 256, 256, 0.6);
+            border-radius: 5px;
+        }
+
+        #body {
+            width: 1100px;
+            height: 1100px;
+        }
+
+        .slidershow {
+            width: 960px;
+            height: 540px;
+            overflow: hidden;
+        }
+
+        .middle {
+            position: absolute;
+            top: 82%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            box-shadow: 0px 0px 6px black;
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 480px;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .bar {
+            width: 50px;
+            height: 10px;
+            border: 2px solid #fff;
+            border-radius: 2px;
+            margin: 6px;
+            cursor: pointer;
+        }
+
+        .bar:hover {
+            background-color: #f88e51;
+        }
+
+        .bar:active {
+            background-color: white;
+        }
+
+        input[name='r'] {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .slides {
+            width: 500%;
+            height: 100%;
+            display: flex;
+        }
+
+        .slide {
+            width: 20%;
+            transition: 0.6s;
+        }
+
+        .slides img {
+            width: 960px;
+            height: 540px;
+            border-radius: 10px;
+        }
+
+        #r1:checked~.s1 {
+            margin-left: 0;
+        }
+
+        #r2:checked~.s1 {
+            margin-left: -20%;
+        }
+
+        #r3:checked~.s1 {
+            margin-left: -40%;
+        }
+
+        #r4:checked~.s1 {
+            margin-left: -60%;
+        }
+
+        #r5:checked~.s1 {
+            margin-left: -80%;
+        }
+
+        .headline {
+            height: 70px;
+            line-height: 70px;
+            background-image: url(images/标题背景2.jpg);
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .headline:hover {
+            cursor: pointer;
+        }
+
+        .text {
+            width: 300px;
+            height: 380px;
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .introduction {
+            float: left;
+            margin: 10px;
+            height: 70px;
+            top: 900px;
+            position: absolute;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 3px 3px 4px rgb(255, 177, 146);
+            overflow: hidden;
+        }
+
+        #left {
+            width: 300px;
+            margin-left: 70px;
+        }
+
+        #middle {
+            width: 305px;
+            left: 585px;
+        }
+
+        #right {
+            width: 320px;
+            left: 905px;
+        }
+
+        #footer {
+            width: 1100px;
+            height: 50px;
+        }
+
+        #footer a {
+            display: block;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="leftimg">
+                <img src="images/logo.jpg" alt="logo">
+            </div>
+            <div class="search-box">
+                <input class="search-txt" type='text' id='inp' style="vertical-align:middle;" value="在此输入搜索内容……"
+                    onfocus="if(this.value==defaultValue) {this.value='';this.type='text';this.style.color='black'}"
+                    onblur="if(!value) {value=defaultValue; this.type='text';this.style.color='#ccc'}" />
+                <button class="search-btn" id="btn">搜索</button>
+            </div>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="index.html">首 页 </a>|&nbsp;</li>
+                <li><a href="mySong.html">我 的 歌 单 </a>|&nbsp;</li>
+                <li><a href="myHometown.html"> 我 的 家 乡</a></li>
+            </ul>
+        </div>
+        <div class="slidershow middle">
+            <div class="slides">
+                <input type="radio" name='r' id='r1' checked>
+                <input type="radio" name='r' id='r2'>
+                <input type="radio" name='r' id='r3'>
+                <input type="radio" name='r' id='r4'>
+                <input type="radio" name='r' id='r5'>
+                <div class="slide s1"><img src="images/1.jpg" alt=""></div>
+                <div><img src="images/2.jpg" alt=""></div>
+                <div><img src="images/3.jpg" alt=""></div>
+                <div><img src="images/4.jpg" alt=""></div>
+                <div><img src="images/5.jpg" alt=""></div>
+            </div>
+            <div class="navigation">
+                <label for="r1" class="bar"></label>
+                <label for="r2" class="bar"></label>
+                <label for="r3" class="bar"></label>
+                <label for="r4" class="bar"></label>
+                <label for="r5" class="bar"></label>
+            </div>
+        </div>
+        <div id="body">
+            <div id="left" class="introduction">
+                <div class="headline" onclick="showLefttext()">
+                    <h3>行政区划</h3>
+                </div>
+                <div class="text" id="administration">
+                    <p>天津下辖16个市辖区，共有街道、乡、镇245个。市辖区分为中心城区、环城区、滨海新区和远郊区。中心城区是天津的发祥地，也是政治文化教育经济商业中心。按照服务业功能，中心城区按照“金融和平”、“商务河西”、“科技南开”、“金贸河东”、“创意河北”、“商贸红桥”的功能定位。
+                    </p>
+                </div>
+            </div>
+            <div id="middle" class="introduction">
+                <div class="headline" onclick="showMiddletext()">
+                    <h3>历史背景</h3>
+                </div>
+                <div class="text" id="history">
+                    <p>天津简称津，意为天子渡过的地方，别名津沽、津门等。天津始于隋朝大运河的开通。在南运河和北运河的交会处、现在的金钢桥三岔河口地方，史称“三会海口”，是天津最早的发祥地。唐中叶以后，天津成为南方粮、绸北运的水陆码头。金代在直沽设“直沽寨”，元朝设“海津镇”，是军事重镇和漕粮转运中心。
+                    </p>
+                </div>
+            </div>
+            <div id="right" class="introduction">
+                <div class="headline" onclick="showRighttext()">
+                    <h3>风土人情</h3>
+                </div>
+                <div class="text" id="culture">
+                    <p>天津是诸多曲艺形式发源、兴盛和发展的地方。其中，天津时调、天津快板、京东大鼓、京韵大鼓、铁片大鼓、快板书等曲艺形式是在天津形成；而京剧、河北梆子、相声、评剧、评书、单弦、梅花大鼓、西河大鼓等是在天津兴盛和发展的。相声和京剧更是天津曲艺的重要代表。天津作为中国北方的曲艺之乡，各种表演艺术门类齐全，民间工艺有杨柳青年画、泥人张彩塑、魏记风筝、天津地毯等。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="#header" id="returnTop">返回顶部</a>
+            <br>
+            &copy;191001229 张雯瑷
+        </div>
+    </div>
+    <script>
+        var n1 = 0;
+        var n2 = 0;
+        var n3 = 0;
+
+        function showLefttext() {
+            n1++;
+            var l = document.getElementById('left');
+            l.style.height = '450px';
+            if (n1 % 2 == 0) {
+                l.style.height = '70px';
+            }
+
+        }
+
+        function showMiddletext() {
+            n2++;
+            var m = document.getElementById('middle');
+            m.style.height = '450px';
+            if (n2 % 2 == 0) {
+                m.style.height = '70px';
+            }
+        }
+
+        function showRighttext() {
+            n3++;
+            var r = document.getElementById('right');
+            r.style.height = '450px';
+            if (n3 % 2 == 0) {
+                r.style.height = '70px';
+            }
+        }
+    </script>
+</body>
+
+</html>
